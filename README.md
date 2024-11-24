@@ -1,4 +1,4 @@
-# Kalman_Algorithm_KEIL 
+# Kalman_For_Posture-fusion 
 Kalman filter algorithm based on STM32 project for fusing HMC5883 and MPU6050 data.
 
 If you need to import the Kalman filter algorithm into a stm32 project developed based on the Keil5 standard library, you need to import the files from the /Hardware folder and the /Software folder and the /Kalman folder into the project.
