@@ -40,6 +40,7 @@ Update covariance:
 
 ![image](https://github.com/user-attachments/assets/75f0c143-e03b-4d25-9550-6404587c4004)
 
-Through the prediction and update steps of the Kalman filter, the output data of the MPU6050 and HMC5883 are weighted and fused. Accelerometer and gyroscope data are used to estimate pitch and roll angles, while magnetometer data is used to correct heading angles.
+
+Through the prediction and update steps of the Kalman filter, the output data of the MPU6050 and HMC5883 are weighted and fused. Accelerometer and gyroscope data are used to estimate pitch and roll angles, while magnetometer data is used to correct heading angles.Indeed it is recursion-based optimal estimation algorithm improves the accuracy of system estimation by fusing data from different sensors to reduce noise and uncertainty.
 
 
