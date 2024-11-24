@@ -12,6 +12,7 @@ This is a magnetometer sensor that measures the strength and direction of the ge
 
 Both MPU6050 and HMC5883 data are noisy, and the Kalman filter weights the inputs of different sensors, combining the advantages and disadvantages of both, to obtain a more accurate output.
 When fusing MPU6050 and HMC5883, the system model typically includes the output of an accelerometer, gyroscope, and magnetometer. The goal of Kalman filtering is to estimate an object's attitude (pitch, roll, and heading angle) from the data provided by these sensors.
+
 ![image](https://github.com/user-attachments/assets/cf40ed9a-9a7b-40db-ac77-4308bc20979a)
 
 Measurement Vector: Includes measurements from accelerometers, gyroscopes, and magnetometers.
@@ -21,13 +22,22 @@ The gyroscope provides an estimate of angular velocity;
 The magnetometer provides an estimate of the heading angle.
 
 # Prediction steps
-Prediction Status:![image](https://github.com/user-attachments/assets/bd268f13-6b2d-4f68-a7b2-b2a159f36e03)
-Predicting Covariance:![image](https://github.com/user-attachments/assets/f9f26495-9948-4595-8e90-bcb7402636e7)
+Prediction Status:
+![image](https://github.com/user-attachments/assets/bd268f13-6b2d-4f68-a7b2-b2a159f36e03)
+
+Predicting Covariance:
+![image](https://github.com/user-attachments/assets/f9f26495-9948-4595-8e90-bcb7402636e7)
 
 # Update Steps
-Calculate the Kalman gain:![image](https://github.com/user-attachments/assets/b8363c6c-1cdc-4d07-8d87-e94a0c89dfb4)
-Update Status Estimates:![image](https://github.com/user-attachments/assets/5e9fea46-50c2-44a0-beca-450ee0fb5203)
-Update covariance:![image](https://github.com/user-attachments/assets/774f19a8-0c17-433a-b6bd-c9997b085213)
+Calculate the Kalman gain:
+![image](https://github.com/user-attachments/assets/b8363c6c-1cdc-4d07-8d87-e94a0c89dfb4)
+
+Update Status Estimates:
+![image](https://github.com/user-attachments/assets/5e9fea46-50c2-44a0-beca-450ee0fb5203)
+
+Update covariance:
+![image](https://github.com/user-attachments/assets/774f19a8-0c17-433a-b6bd-c9997b085213)
+
 ![image](https://github.com/user-attachments/assets/75f0c143-e03b-4d25-9550-6404587c4004)
 
 Through the prediction and update steps of the Kalman filter, the output data of the MPU6050 and HMC5883 are weighted and fused. Accelerometer and gyroscope data are used to estimate pitch and roll angles, while magnetometer data is used to correct heading angles.
