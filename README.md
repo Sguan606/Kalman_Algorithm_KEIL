@@ -7,7 +7,7 @@ If you need to import the Kalman filter algorithm into a stm32 project developed
 Then it should be noted that the Serial.c and Serial.h project files are also imported. Or you can open the USART serial port yourself and create the functions you need in KalmanFilter.
 
 如果需要将卡尔曼滤波算法导入到基于 Keil5 标准库开发的 stm32 工程中，则需要将 /Hardware 文件夹、/Software 文件夹和 /Kalman 文件夹中的文件导入到工程中。
-然后应该注意的是，Serial.c 和 Serial.h 项目文件也被导入了。或者您可以自己打开 USART 串口并在 KalmanFilter 中创建您需要的功能。
+然后应该注意的是，要确保Serial.c 和 Serial.h 项目文件也被导入了...或者您可以自己打开 USART 串口并在 KalmanFilter 中创建您需要的功能。
 
 # MPU6050:
 This is a sensor that integrates an accelerometer and a gyroscope. Accelerometers are used to measure linear acceleration, while gyroscopes are used to measure angular velocity. In attitude estimation, MPU6050 typically provide accelerometer data to estimate pitch and roll angles, while gyroscopes are used to estimate angular changes.
@@ -17,7 +17,7 @@ This is a sensor that integrates an accelerometer and a gyroscope. Accelerometer
 # HMC5883: 
 This is a magnetometer sensor that measures the strength and direction of the geomagnetic field to estimate the heading angle (Yaw). Since the output of a magnetometer is highly affected by environmental disturbances, such as ferromagnetic substances, it needs to be fused with other sensor data to improve accuracy.
 
-这是一种磁力计传感器，可测量地磁场的强度和方向，以估计航向角 （Yaw）。由于磁力计的输出受环境干扰（如铁磁物质）的高度影响，因此需要将其与其他传感器数据融合以提高精度。
+可测量地磁场的强度和方向一种磁力计传感器，以估计航向角 （Yaw）。由于磁力计的输出受环境干扰（如铁磁物质）的高度影响，因此需要将其与其他传感器数据融合以提高精度。
 
 Both MPU6050 and HMC5883 data are noisy, and the Kalman filter weights the inputs of different sensors, combining the advantages and disadvantages of both, to obtain a more accurate output.
 When fusing MPU6050 and HMC5883, the system model typically includes the output of an accelerometer, gyroscope, and magnetometer. The goal of Kalman filtering is to estimate an object's attitude (pitch, roll, and heading angle) from the data provided by these sensors.
